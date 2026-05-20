@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eid ul Adha Mubarak 💕 Muskan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink-50: #fff0f5;
+  --pink-100: #ffd6e7;
+  --pink-200: #ffadd2;
+  --pink-300: #ff85ba;
+  --pink-400: #f73ea0;
+  --pink-500: #eb2f96;
+  --pink-600: #c41d7f;
+  --gold: #d4a843;
+  --gold-light: #fef3cd;
+  --rose: #ff6b9d;
+  --deep-rose: #c2185b;
+  --cream: #fff9fb;
+  --text-dark: #4a0030;
+  --text-med: #8b1a5a;
+  --shadow-pink: rgba(235, 47, 150, 0.25);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff0f8 0%, #ffe4f0 30%, #fff0f8 60%, #fde8f4 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== FLOATING PARTICLES ===== */
+.particles {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  font-size: 20px;
+  animation: floatUp linear infinite;
+  opacity: 0.6;
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* ===== PAGES ===== */
+.page { display: none; position: relative; z-index: 1; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ===== LANDING PAGE ===== */
+#landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+}
+.eid-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--deep-rose);
+  text-shadow: 2px 4px 20px var(--shadow-pink);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+  margin-bottom: 10px;
+}
+@keyframes titleGlow {
+  from { text-shadow: 2px 4px 20px rgba(194,24,91,0.3); }
+  to { text-shadow: 2px 4px 40px rgba(194,24,91,0.8), 0 0 80px rgba(235,47,150,0.4); }
+}
+.eid-subtitle {
+  font-size: 1.2rem;
+  color: var(--pink-500);
+  font-style: italic;
+  margin-bottom: 30px;
+  animation: fadeInUp 1s ease 0.5s both;
+}
+.urdu-text {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  direction: rtl;
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease 0.8s both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.chat-btn {
+  background: linear-gradient(135deg, var(--pink-400), var(--deep-rose));
+  color: white;
+  border: none;
+  padding: 18px 50px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 30px var(--shadow-pink);
+  transition: all 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+  letter-spacing: 1px;
+}
+.chat-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 40px var(--shadow-pink);
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 8px 30px var(--shadow-pink); }
+  50% { box-shadow: 0 8px 50px rgba(235,47,150,0.6); }
+}
+
+/* ===== CHATBOT ===== */
+#chatbot {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.chat-header {
+  background: linear-gradient(135deg, var(--deep-rose), var(--pink-400));
+  border-radius: 24px 24px 0 0;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+.chat-header h2 { font-size: 1.3rem; font-weight: 600; }
+.chat-header p { font-size: 0.85rem; opacity: 0.9; }
+.chat-body {
+  background: white;
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 400px;
+  max-height: 60vh;
+  overflow-y: auto;
+  border-left: 1px solid var(--pink-100);
+  border-right: 1px solid var(--pink-100);
+}
+.msg {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  animation: msgPop 0.3s ease;
+}
+@keyframes msgPop {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+.msg.bot {
+  background: linear-gradient(135deg, var(--pink-50), var(--pink-100));
+  color: var(--text-dark);
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+  border: 1px solid var(--pink-200);
+}
+.msg.user {
+  background: linear-gradient(135deg, var(--deep-rose), var(--pink-500));
+  color: white;
+  border-bottom-right-radius: 4px;
+  align-self: flex-end;
+}
+.bot-name { font-weight: 700; color: var(--pink-500); font-size: 0.75rem; margin-bottom: 4px; }
+.chat-input-area {
+  background: white;
+  border-radius: 0 0 24px 24px;
+  padding: 15px;
+  border: 1px solid var(--pink-100);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.chat-input {
+  flex: 1;
+  border: 2px solid var(--pink-200);
+  border-radius: 25px;
+  padding: 10px 18px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  color: var(--text-dark);
+  transition: border-color 0.3s;
+  min-width: 150px;
+}
+.chat-input:focus { border-color: var(--pink-400); }
+.chat-send {
+  background: linear-gradient(135deg, var(--pink-400), var(--deep-rose));
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.chat-send:hover { transform: scale(1.1); }
+.option-btns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 15px;
+  background: var(--pink-50);
+  border: 1px solid var(--pink-100);
+}
+.opt-btn {
+  background: white;
+  border: 2px solid var(--pink-300);
+  color: var(--deep-rose);
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.opt-btn:hover {
+  background: linear-gradient(135deg, var(--pink-400), var(--deep-rose));
+  color: white;
+  transform: scale(1.05);
+}
+.meat-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px 15px;
+  background: var(--pink-50);
+  border: 1px solid var(--pink-100);
+}
+.meat-btn {
+  background: white;
+  border: 2px solid var(--pink-200);
+  border-radius: 16px;
+  padding: 12px 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+}
+.meat-btn:hover {
+  background: linear-gradient(135deg, var(--pink-100), var(--pink-200));
+  border-color: var(--pink-400);
+  transform: translateY(-2px);
+}
+.meat-btn .emoji { font-size: 1.5rem; display: block; margin-bottom: 4px; }
+
+/* ===== MAIN APP ===== */
+#mainapp { min-height: 100vh; padding-bottom: 80px; }
+
+/* TOP NAV */
+.top-nav {
+  background: linear-gradient(135deg, var(--deep-rose), var(--pink-500));
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px var(--shadow-pink);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-profiles {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+}
+.nav-profile-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.nav-profile-btn:hover { transform: scale(1.1); }
+.nav-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s;
+}
+.nav-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.nav-avatar-label { color: white; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px; }
+.nav-love-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 3px solid rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  cursor: pointer;
+  animation: heartBeat 1.5s ease-in-out infinite;
+  transition: all 0.3s;
+}
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* PROFILE PAGE */
+#profilePage {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--cream);
+  z-index: 200;
+  display: none;
+  overflow-y: auto;
+  animation: slideIn 0.4s ease;
+}
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+#profilePage.open { display: block; }
+
+.profile-header {
+  background: linear-gradient(135deg, var(--deep-rose), var(--pink-400), var(--rose));
+  padding: 30px 20px 50px;
+  text-align: center;
+  position: relative;
+}
+.profile-back {
+  position: absolute;
+  top: 15px; left: 15px;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  color: white;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.profile-back:hover { background: rgba(255,255,255,0.5); }
+.profile-pic-container {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin: 0 auto 15px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+}
+.profile-pic-container:hover { transform: scale(1.05); }
+.profile-pic-container img { width: 100%; height: 100%; object-fit: cover; }
+.profile-pic-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  font-size: 0.65rem;
+  padding: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.profile-pic-container:hover .profile-pic-overlay { opacity: 1; }
+.profile-name { color: white; font-size: 1.5rem; font-weight: 700; }
+.profile-birthday {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.birthday-countdown {
+  background: rgba(255,255,255,0.25);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  color: white;
+  margin-top: 8px;
+  display: inline-block;
+  animation: countdownGlow 2s ease-in-out infinite alternate;
+}
+@keyframes countdownGlow {
+  from { background: rgba(255,255,255,0.2); }
+  to { background: rgba(255,255,255,0.4); }
+}
+
+/* PROFILE TABS */
+.profile-tabs {
+  display: flex;
+  background: white;
+  border-bottom: 2px solid var(--pink-100);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.ptab {
+  flex: 1;
+  padding: 14px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-med);
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+}
+.ptab.active { color: var(--deep-rose); border-bottom-color: var(--deep-rose); }
+
+/* MEDIA GRID */
+.media-section { padding: 15px; }
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.add-btn {
+  background: linear-gradient(135deg, var(--pink-300), var(--pink-500));
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s;
+  margin-bottom: 15px;
+}
+.add-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px var(--shadow-pink); }
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.media-item {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--pink-100);
+  position: relative;
+  cursor: pointer;
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+.media-item img { width: 100%; height: 100%; object-fit: cover; }
+.media-item video { width: 100%; height: 100%; object-fit: cover; }
+.text-card {
+  background: linear-gradient(135deg, var(--pink-50), white);
+  border: 1px solid var(--pink-200);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  animation: fadeIn 0.5s ease;
+}
+.text-card .card-date { font-size: 0.7rem; color: var(--text-med); margin-top: 8px; }
+
+/* LOVELY SCROLL TEXT */
+.lovely-scroll {
+  padding: 20px;
+  background: linear-gradient(135deg, var(--pink-50), white);
+}
+.lovely-card {
+  background: white;
+  border: 1px solid var(--pink-200);
+  border-left: 4px solid var(--pink-400);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.7;
+  animation: fadeInUp 0.6s ease;
+}
+.lovely-card.urdu {
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 1.1rem;
+}
+.lovely-card.funny { border-left-color: var(--gold); }
+
+/* MUSKAN FAV THINGS */
+.fav-things-section {
+  padding: 20px;
+}
+.fav-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--pink-200), var(--pink-400));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 6px 20px var(--shadow-pink);
+  animation: floatBounce 3s ease-in-out infinite;
+  margin: 10px auto;
+}
+.fav-icon:hover { transform: scale(1.1) rotate(5deg); }
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* MEMORIES PAGE */
+#memoriesPage {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--cream);
+  z-index: 200;
+  display: none;
+  overflow-y: auto;
+  animation: slideIn 0.4s ease;
+}
+#memoriesPage.open { display: block; }
+
+.memories-header {
+  background: linear-gradient(135deg, #9c27b0, #e91e8c);
+  padding: 40px 20px 30px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.memories-header h1 { font-size: 1.8rem; font-weight: 700; }
+.memories-header p { opacity: 0.9; margin-top: 5px; }
+
+/* DAILY QUOTES BOTTOM */
+.daily-quotes-bar {
+  background: linear-gradient(135deg, var(--pink-50), white);
+  padding: 20px;
+  margin-top: 20px;
+}
+.daily-quote-card {
+  background: linear-gradient(135deg, var(--deep-rose), var(--pink-500));
+  color: white;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  margin-bottom: 12px;
+  animation: fadeIn 1s ease;
+}
+.daily-quote-card .quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.daily-quote-card .quote-text.urdu {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  direction: rtl;
+  font-size: 1.2rem;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: white;
+  border-top: 1px solid var(--pink-100);
+  display: flex;
+  box-shadow: 0 -5px 20px var(--shadow-pink);
+  z-index: 100;
+}
+.bnav-btn {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.65rem;
+  color: var(--text-med);
+  border: none;
+  background: none;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.bnav-btn .icon { font-size: 1.3rem; }
+.bnav-btn.active { color: var(--deep-rose); }
+.bnav-btn:hover { color: var(--pink-500); }
+
+/* ADMIN PANEL */
+#adminPanel {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #1a0011;
+  z-index: 500;
+  display: none;
+  overflow-y: auto;
+  color: white;
+}
+#adminPanel.open { display: block; }
+.admin-header {
+  background: linear-gradient(135deg, #4a0030, #8b0051);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--pink-600);
+}
+.admin-header h1 { color: var(--pink-200); font-size: 1.5rem; }
+.admin-content { padding: 20px; }
+.admin-section { margin-bottom: 30px; }
+.admin-section h3 { color: var(--pink-300); margin-bottom: 15px; font-size: 1.1rem; border-bottom: 1px solid #4a0030; padding-bottom: 8px; }
+.admin-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,100,150,0.3);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.admin-item-content { flex: 1; font-size: 0.85rem; color: #ddd; }
+.admin-del-btn {
+  background: linear-gradient(135deg, #c41d7f, #9c1060);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.admin-del-btn:hover { background: #e91e8c; transform: scale(1.05); }
+.admin-qa-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,100,150,0.3);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.admin-qa-item .q { color: var(--pink-300); font-size: 0.8rem; }
+.admin-qa-item .a { color: white; font-size: 0.9rem; margin-top: 4px; }
+
+/* LOGIN */
+.admin-login {
+  max-width: 340px;
+  margin: 100px auto;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,100,150,0.3);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+}
+.admin-login h2 { color: var(--pink-300); margin-bottom: 30px; font-size: 1.5rem; }
+.admin-login input {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,100,150,0.4);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  outline: none;
+}
+.admin-login input::placeholder { color: rgba(255,255,255,0.4); }
+.admin-login button {
+  width: 100%;
+  background: linear-gradient(135deg, var(--pink-500), var(--deep-rose));
+  border: none;
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.admin-login button:hover { transform: translateY(-2px); }
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+.modal.open { display: flex; }
+.modal-box {
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  width: 100%;
+  max-width: 380px;
+  animation: popIn 0.3s ease;
+}
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.modal-box h3 { color: var(--text-dark); font-size: 1.1rem; margin-bottom: 15px; }
+.modal-box input, .modal-box textarea {
+  width: 100%;
+  border: 2px solid var(--pink-200);
+  border-radius: 12px;
+  padding: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  outline: none;
+  color: var(--text-dark);
+}
+.modal-box textarea { height: 100px; resize: none; }
+.modal-btns { display: flex; gap: 10px; }
+.modal-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.modal-btn.primary {
+  background: linear-gradient(135deg, var(--pink-400), var(--deep-rose));
+  color: white;
+}
+.modal-btn.secondary {
+  background: var(--pink-50);
+  color: var(--text-med);
+  border: 1px solid var(--pink-200);
+}
+
+/* MEDIA VIEWER */
+.media-viewer {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.media-viewer.open { display: flex; }
+.media-viewer img, .media-viewer video {
+  max-width: 95%;
+  max-height: 90vh;
+  border-radius: 12px;
+}
+.mv-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* SCROLL ANIMATION */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LOVE PAGE */
+#lovePage {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #1a0011, #3d001e);
+  z-index: 200;
+  display: none;
+  overflow-y: auto;
+  color: white;
+}
+#lovePage.open { display: block; }
+.love-header {
+  text-align: center;
+  padding: 50px 20px 30px;
+}
+.love-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--rose);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+.love-hearts {
+  font-size: 3rem;
+  animation: heartBeat 1s ease-in-out infinite;
+  display: block;
+  margin: 20px auto;
+}
+.love-section {
+  padding: 20px;
+}
+.love-quote-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,100,150,0.3);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 15px;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+.love-quote-card p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--pink-200);
+}
+.love-quote-card .urdu-q {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  direction: rtl;
+  font-size: 1.3rem;
+  color: var(--pink-100);
+}
+
+/* Memories icon in nav */
+.memories-nav-btn {
+  background: linear-gradient(135deg, var(--pink-300), var(--pink-500));
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px auto;
+  width: fit-content;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px var(--shadow-pink);
+}
+.memories-nav-btn:hover { transform: translateY(-3px); }
+
+/* TYPING ANIMATION */
+.typing-dots {
+  display: flex;
+  gap: 5px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, var(--pink-50), var(--pink-100));
+  border-radius: 18px;
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+  border: 1px solid var(--pink-200);
+  animation: fadeIn 0.3s ease;
+}
+.typing-dot {
+  width: 8px; height: 8px;
+  background: var(--pink-400);
+  border-radius: 50%;
+  animation: dotBounce 1.4s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING PARTICLES -->
+<div class="particles" id="particles"></div>
+
+<!-- ===== PAGE 1: LANDING ===== -->
+<div class="page active" id="landingPage">
+  <div id="landing">
+    <div style="font-size:4rem; margin-bottom:20px; animation: heartBeat 1.5s ease-in-out infinite;">🌙</div>
+    <h1 class="eid-title">Eid ul Adha Mubarak</h1>
+    <p class="eid-subtitle">✨ A special gift from Sudais to Muskan ✨</p>
+    <div class="urdu-text">عید الاضحی مبارک ہو 🌹</div>
+    
+    <div style="background: linear-gradient(135deg, #fff0f5, #ffe4ef); border: 2px solid var(--pink-200); border-radius: 20px; padding: 25px; margin-bottom: 30px; max-width: 380px; animation: fadeInUp 1s ease 1s both;">
+      <p style="color: var(--text-dark); font-size: 0.95rem; line-height: 1.7; font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: 10px;">"Every day with you is Eid for me, Muskan 💕"</p>
+      <p style="font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; color: var(--text-med); font-size: 1rem;">تم میری زندگی کا سب سے خوبصورت تحفہ ہو 🌷</p>
+    </div>
+
+    <button class="chat-btn" onclick="goToChatbot()">
+      💬 Start Chatting with Bot
+    </button>
+    
+    <div style="margin-top: 20px; color: var(--pink-400); font-size: 0.85rem;">
+      ✨ Click to begin your special Eid experience ✨
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 2: CHATBOT ===== -->
+<div class="page" id="chatbotPage">
+  <div id="chatbot">
+    <div class="chat-header">
+      <div style="font-size: 2rem; margin-bottom: 8px;">🤖💗</div>
+      <h2>Eid Bot — by Sudais</h2>
+      <p>مجھ سے بات کرو! Talk to me!</p>
+    </div>
+    
+    <div class="chat-body" id="chatBody"></div>
+    
+    <div id="optionArea"></div>
+
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Type here... یہاں لکھیں" onkeypress="chatKeyPress(event)">
+      <button class="chat-send" onclick="sendUserMsg()">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 3: MAIN APP ===== -->
+<div class="page" id="mainapp">
+  <!-- TOP NAV -->
+  <div class="top-nav">
+    <div class="nav-profiles">
+      <!-- SUDAIS -->
+      <div class="nav-profile-btn" onclick="openProfile('sudais')">
+        <div class="nav-avatar" id="navSudaisAvatar">
+          <span>👦</span>
+        </div>
+        <span class="nav-avatar-label">Sudais</span>
+      </div>
+
+      <!-- MUSKAN -->
+      <div class="nav-profile-btn" onclick="openProfile('muskan')">
+        <div class="nav-avatar" id="navMuskanAvatar">
+          <span>👧</span>
+        </div>
+        <span class="nav-avatar-label">Muskan</span>
+      </div>
+
+      <!-- LOVE -->
+      <div class="nav-profile-btn" onclick="openLovePage()">
+        <div class="nav-love-btn">💗</div>
+        <span class="nav-avatar-label" style="color:white;">Love</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCROLL CONTENT -->
+  <div style="padding: 20px; padding-bottom: 100px;">
+    
+    <!-- Welcome -->
+    <div style="text-align:center; padding: 30px 0 20px;" class="scroll-reveal">
+      <h2 style="font-family: 'Playfair Display', serif; color: var(--deep-rose); font-size: 1.8rem;">Eid ul Adha Mubarak! 🌙</h2>
+      <p style="color: var(--text-med); font-size: 0.9rem; margin-top: 8px;">Sudais 💕 Muskan</p>
+    </div>
+
+    <!-- Memories Button -->
+    <div class="scroll-reveal" style="text-align:center; margin: 20px 0;">
+      <button class="memories-nav-btn" onclick="openMemories()">
+        📸 Memories | یادیں
+      </button>
+    </div>
+
+    <!-- Lovely Texts -->
+    <div id="lovelyTexts"></div>
+
+    <!-- Muskan Fav Things Icon -->
+    <div class="fav-things-section scroll-reveal" style="text-align:center;">
+      <h3 style="color: var(--text-dark); font-size: 1rem; margin-bottom: 15px; font-family: 'Playfair Display', serif;">💗 Muskan's Favourite Things</h3>
+      <p style="color: var(--text-med); font-size: 0.8rem; direction:rtl; font-family: 'Noto Nastaliq Urdu', serif; margin-bottom: 15px;">مسکان کی پسندیدہ چیزیں</p>
+      <div class="fav-icon" onclick="openFavThings()" title="Muskan's Fav Things">
+        🌸
+      </div>
+      <p style="color: var(--text-med); font-size: 0.8rem; margin-top: 8px;">Muskan Fav Things ✨</p>
+    </div>
+
+    <!-- Urdu Quotes -->
+    <div id="urduQuotes" style="margin-top: 30px;"></div>
+
+    <!-- Daily Changing Quotes -->
+    <div class="daily-quotes-bar" id="dailyQuotes">
+      <h3 style="color: var(--text-dark); text-align:center; margin-bottom: 20px; font-family: 'Playfair Display', serif;">🌹 Sudais Says... روزانہ 💌</h3>
+      <div id="dailyQuotesList"></div>
+    </div>
+
+    <!-- Admin Access (hidden, long-press 5s on copyright text) -->
+    <div style="text-align:center; margin-top: 40px; padding: 20px;">
+      <span style="color: var(--pink-200); font-size: 0.7rem; cursor: pointer;" 
+            id="adminTrigger"
+            onmousedown="startAdminTimer()" 
+            onmouseup="clearAdminTimer()"
+            onmouseleave="clearAdminTimer()"
+            ontouchstart="startAdminTimer()"
+            ontouchend="clearAdminTimer()">
+        💗 Made with love by Sudais for Muskan 💗
+      </span>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+    <button class="bnav-btn active" onclick="scrollToTop()">
+      <span class="icon">🏠</span> Home
+    </button>
+    <button class="bnav-btn" onclick="openProfile('sudais')">
+      <span class="icon">👦</span> Sudais
+    </button>
+    <button class="bnav-btn" onclick="openProfile('muskan')">
+      <span class="icon">👧</span> Muskan
+    </button>
+    <button class="bnav-btn" onclick="openMemories()">
+      <span class="icon">📸</span> Memories
+    </button>
+    <button class="bnav-btn" onclick="openLovePage()">
+      <span class="icon">💗</span> Love
+    </button>
+  </div>
+</div>
+
+<!-- ===== PROFILE PAGE ===== -->
+<div id="profilePage">
+  <div class="profile-header" id="profileHeader">
+    <button class="profile-back" onclick="closeProfile()">←</button>
+    <div class="profile-pic-container" id="profilePicContainer" onclick="changeProfilePic()">
+      <span id="profilePicEmoji">👤</span>
+      <img id="profilePicImg" src="" style="display:none">
+      <div class="profile-pic-overlay">📷 Change</div>
+    </div>
+    <h1 class="profile-name" id="profileNameEl"></h1>
+    <div class="profile-birthday" id="profileBirthdayEl"></div>
+    <div class="birthday-countdown" id="birthdayCountdown"></div>
+  </div>
+
+  <div class="profile-tabs">
+    <div class="ptab active" onclick="switchTab('photos')">📷 Photos</div>
+    <div class="ptab" onclick="switchTab('videos')">🎥 Videos</div>
+    <div class="ptab" onclick="switchTab('texts')">💬 Texts</div>
+    <div class="ptab" onclick="switchTab('lovely')">💗 Lovely</div>
+  </div>
+
+  <div id="profileTabContent" class="media-section">
+  </div>
+</div>
+
+<!-- ===== MEMORIES PAGE ===== -->
+<div id="memoriesPage">
+  <div class="memories-header">
+    <button class="profile-back" onclick="closeMemories()" style="position:absolute;top:15px;left:15px;">←</button>
+    <div style="font-size: 3rem; margin-bottom: 10px;">📸</div>
+    <h1>Our Memories</h1>
+    <p>یادیں جو دل میں ہمیشہ رہیں گی</p>
+  </div>
+
+  <div style="padding: 20px;">
+    <button class="add-btn" onclick="addMemory('photo')">📷 Add Photo</button>
+    <button class="add-btn" onclick="addMemory('video')">🎥 Add Video</button>
+    <button class="add-btn" onclick="addMemory('text')">💬 Add Memory Text</button>
+
+    <div id="memoriesGrid" class="media-grid" style="margin-top: 15px;"></div>
+    <div id="memoriesTexts" style="margin-top: 15px;"></div>
+    <div id="noMemories" style="text-align:center; color: var(--text-med); padding: 40px;">
+      <div style="font-size: 3rem; margin-bottom: 15px;">📷</div>
+      <p>No memories yet.<br>Add your first memory! 💕</p>
+      <p style="font-family: 'Noto Nastaliq Urdu', serif; direction:rtl; margin-top: 10px; font-size: 1.1rem;">ابھی کوئی یادیں نہیں، پہلی یاد شامل کریں!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LOVE PAGE ===== -->
+<div id="lovePage">
+  <div style="padding: 15px;">
+    <button style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 0.85rem;" onclick="closeLovePage()">← Back</button>
+  </div>
+  <div class="love-header">
+    <span class="love-hearts">💗💕💗</span>
+    <h1>Sudais 💗 Muskan</h1>
+    <p style="color: var(--pink-200); margin-top: 10px; font-family: 'Noto Nastaliq Urdu', serif; direction:rtl; font-size: 1.1rem;">محبت کی دنیا میں خوش آمدید</p>
+  </div>
+
+  <div class="love-section">
+    <div id="lovePageContent"></div>
+  </div>
+
+  <!-- Love Media -->
+  <div style="padding: 20px;">
+    <h3 style="color: var(--pink-300); margin-bottom: 15px;">💕 Our Love Memories</h3>
+    <button class="add-btn" onclick="addMedia('love','photo')">📷 Add Photo</button>
+    <button class="add-btn" onclick="addMedia('love','video')">🎥 Add Video</button>
+    <button class="add-btn" onclick="addMedia('love','text')">💬 Add Text</button>
+    <div id="loveMediaGrid" class="media-grid" style="margin-top: 15px;"></div>
+    <div id="loveTexts" style="margin-top: 15px;"></div>
+  </div>
+</div>
+
+<!-- ===== ADMIN PANEL ===== -->
+<div id="adminPanel">
+  <div id="adminLogin" class="admin-login">
+    <div style="font-size: 3rem; margin-bottom: 15px;">🔐</div>
+    <h2>Admin Panel</h2>
+    <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 25px;">Enter admin password</p>
+    <input type="password" id="adminPassInput" placeholder="Password..." onkeypress="adminKeyPress(event)">
+    <button onclick="adminLogin()">Login</button>
+    <button onclick="closeAdmin()" style="background: transparent; border: 1px solid rgba(255,100,150,0.4); margin-top: 10px; width: 100%; padding: 12px; border-radius: 12px; color: rgba(255,255,255,0.7); cursor: pointer; font-size: 0.9rem;">Cancel</button>
+    <div id="adminError" style="color: #ff4d4d; margin-top: 10px; font-size: 0.85rem;"></div>
+  </div>
+
+  <div id="adminContent" style="display:none;">
+    <div class="admin-header">
+      <div style="font-size: 2rem; margin-bottom: 8px;">🔐</div>
+      <h1>Admin Panel</h1>
+      <p style="color: var(--pink-300); font-size: 0.85rem; margin-top: 5px;">Full Access — مسکان کا پینل</p>
+      <button onclick="closeAdmin()" style="margin-top: 15px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 20px; border-radius: 20px; cursor: pointer;">← Exit Admin</button>
+    </div>
+
+    <div class="admin-content">
+      <!-- Chat Answers -->
+      <div class="admin-section">
+        <h3>💬 Chat Answers (چیٹ کے جوابات)</h3>
+        <div id="adminChatAnswers"></div>
+      </div>
+
+      <!-- Sudais Media -->
+      <div class="admin-section">
+        <h3>👦 Sudais Profile Media</h3>
+        <div id="adminSudaisMedia"></div>
+      </div>
+
+      <!-- Muskan Media -->
+      <div class="admin-section">
+        <h3>👧 Muskan Profile Media</h3>
+        <div id="adminMuskanMedia"></div>
+      </div>
+
+      <!-- Love Media -->
+      <div class="admin-section">
+        <h3>💗 Love Page Media</h3>
+        <div id="adminLoveMedia"></div>
+      </div>
+
+      <!-- Memories -->
+      <div class="admin-section">
+        <h3>📸 Memories</h3>
+        <div id="adminMemories"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODALS ===== -->
+<!-- Add Media Modal -->
+<div class="modal" id="addMediaModal">
+  <div class="modal-box">
+    <h3 id="addMediaTitle">Add Media</h3>
+    <input type="file" id="mediaFileInput" accept="image/*,video/*" style="border: 2px dashed var(--pink-300); padding: 20px; text-align:center; cursor:pointer;">
+    <div class="modal-btns" style="margin-top:12px;">
+      <button class="modal-btn primary" onclick="saveMedia()">Save 💕</button>
+      <button class="modal-btn secondary" onclick="closeModal('addMediaModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Text Modal -->
+<div class="modal" id="addTextModal">
+  <div class="modal-box">
+    <h3 id="addTextTitle">Add Text</h3>
+    <textarea id="textInput" placeholder="Write something beautiful... 💕&#10;کچھ خوبصورت لکھیں..."></textarea>
+    <div class="modal-btns">
+      <button class="modal-btn primary" onclick="saveText()">Save 💕</button>
+      <button class="modal-btn secondary" onclick="closeModal('addTextModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Fav Things Modal -->
+<div class="modal" id="favThingsModal">
+  <div class="modal-box">
+    <h3>🌸 Muskan's Fav Things</h3>
+    <p style="color:var(--text-med); font-size:0.8rem; margin-bottom:12px;">مسکان کی پسندیدہ چیزیں</p>
+    <div id="favThingsList" style="max-height:200px; overflow-y:auto; margin-bottom:12px;"></div>
+    <textarea id="favThingInput" placeholder="Add a favourite thing... پسندیدہ چیز لکھیں" style="height:80px;"></textarea>
+    <div class="modal-btns">
+      <button class="modal-btn primary" onclick="saveFavThing()">Add ✨</button>
+      <button class="modal-btn secondary" onclick="closeModal('favThingsModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Media Viewer -->
+<div class="media-viewer" id="mediaViewer">
+  <button class="mv-close" onclick="closeViewer()">✕</button>
+  <div id="viewerContent"></div>
+</div>
+
+<input type="file" id="profilePicInput" accept="image/*" style="display:none" onchange="handleProfilePicChange(event)">
+
+<script>
+// ===== STATE =====
+let appState = {
+  currentProfile: null,
+  currentTab: 'photos',
+  currentAddTarget: null,
+  currentAddType: null,
+  adminLoggedIn: false,
+  adminTimer: null,
+  
+  sudais: {
+    name: 'Sudais',
+    birthday: '22 december',
+    birthdayMonth: 12,
+    birthdayDay: 22,
+    emoji: '👦',
+    pic: null,
+    photos: [],
+    videos: [],
+    texts: [],
+  },
+  muskan: {
+    name: 'Muskan',
+    birthday: '28 october',
+    birthdayMonth: 10,
+    birthdayDay: 28,
+    emoji: '👧',
+    pic: null,
+    photos: [],
+    videos: [],
+    texts: [],
+  },
+  love: {
+    photos: [],
+    videos: [],
+    texts: [],
+  },
+  memories: {
+    photos: [],
+    videos: [],
+    texts: [],
+  },
+  favThings: [],
+  chatAnswers: [],
+};
+
+// Try load from localStorage
+try {
+  const saved = localStorage.getItem('eidMuskan');
+  if(saved) { const d = JSON.parse(saved); Object.assign(appState, d); }
+} catch(e) {}
+
+function saveState() {
+  try { localStorage.setItem('eidMuskan', JSON.stringify(appState)); } catch(e) {}
+}
+
+// ===== PARTICLES =====
+function createParticles() {
+  const emojis = ['🌸','💕','🌹','✨','💗','🦋','⭐','🌺','💐','🥀','💖','🌙'];
+  const container = document.getElementById('particles');
+  for(let i = 0; i < 18; i++) {
+    const el = document.createElement('div');
+    el.className = 'particle';
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    el.style.left = Math.random() * 100 + '%';
+    el.style.animationDuration = (8 + Math.random() * 12) + 's';
+    el.style.animationDelay = (Math.random() * 10) + 's';
+    el.style.fontSize = (14 + Math.random() * 20) + 'px';
+    container.appendChild(el);
+  }
+}
+createParticles();
+
+// ===== PAGE NAVIGATION =====
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function goToChatbot() {
+  showPage('chatbotPage');
+  initChatbot();
+}
+
+// ===== CHATBOT =====
+let chatStep = 0;
+let userName = '';
+let chatAnswersLog = [];
+
+function initChatbot() {
+  chatStep = 0;
+  setTimeout(() => addBotMsg('🌙 Assalamualaikum! Eid Mubarak! 🌙\nمیں سدائس کا بھیجا ہوا بوٹ ہوں، آپ کو Eid Mubarak!\nSabse pahle, aapka naam kya hai?\nآپ کا نام کیا ہے؟', 500), 300);
+}
+
+function addBotMsg(text, delay=400) {
+  const body = document.getElementById('chatBody');
+  
+  // Add typing indicator
+  const typing = document.createElement('div');
+  typing.className = 'typing-dots';
+  typing.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+  body.appendChild(typing);
+  body.scrollTop = body.scrollHeight;
+
+  setTimeout(() => {
+    body.removeChild(typing);
+    const msg = document.createElement('div');
+    msg.className = 'msg bot';
+    msg.innerHTML = '<div class="bot-name">🤖 Sudais Bot</div>' + text.replace(/\n/g,'<br>');
+    body.appendChild(msg);
+    body.scrollTop = body.scrollHeight;
+  }, delay + 800);
+}
+
+function addUserMsg(text) {
+  const body = document.getElementById('chatBody');
+  const msg = document.createElement('div');
+  msg.className = 'msg user';
+  msg.textContent = text;
+  body.appendChild(msg);
+  body.scrollTop = body.scrollHeight;
+}
+
+function setOptions(opts) {
+  const area = document.getElementById('optionArea');
+  if(!opts) { area.innerHTML = ''; return; }
+  area.innerHTML = '<div class="option-btns">' +
+    opts.map(o => `<button class="opt-btn" onclick="handleOption('${o.replace(/'/g,"\\'")}')">` + o + `</button>`).join('') +
+    '</div>';
+}
+
+function setMeatOptions() {
+  const area = document.getElementById('optionArea');
+  const opts = [
+    {kg: '1 kg', emoji: '🥩'},
+    {kg: '2 kg', emoji: '🥩🥩'},
+    {kg: '3 kg', emoji: '🍖'},
+    {kg: '4 kg', emoji: '🍖🍖'},
+    {kg: '5 kg', emoji: '🍗🍖🥩'},
+    {kg: 'Bohot zyada! 😄', emoji: '🎉'},
+  ];
+  area.innerHTML = '<div class="meat-options">' +
+    opts.map(o => `<button class="meat-btn" onclick="handleOption('${o.kg}')"><span class="emoji">${o.emoji}</span>${o.kg}</button>`).join('') +
+    '</div>';
+}
+
+function handleOption(val) {
+  addUserMsg(val);
+  setOptions(null);
+  processChat(val);
+}
+
+function sendUserMsg() {
+  const input = document.getElementById('chatInput');
+  const val = input.value.trim();
+  if(!val) return;
+  input.value = '';
+  addUserMsg(val);
+  setOptions(null);
+  processChat(val);
+}
+
+function chatKeyPress(e) {
+  if(e.key === 'Enter') sendUserMsg();
+}
+
+function processChat(val) {
+  const v = val.toLowerCase();
+
+  if(chatStep === 0) {
+    // Name question
+    userName = val;
+    chatAnswersLog.push({q: 'Naam kya hai?', a: val});
+    chatStep = 1;
+
+    setTimeout(() => {
+      addBotMsg(`🎉 Eid ul Adha Mubarak, ${userName}! 🌙\n\nYeh special message hai Sudais ki taraf se Muskan ke liye:\n\n💌 "Eid Mubarak Muskan! ❤️ Tum meri zindagi ki sabse khoobsurat cheez ho! Is Eid par tumhare saath rehna chahta hoon."\n\n🌹 سدائس کی طرف سے مسکان کو عید مبارک! 🌹`, 600);
+    }, 400);
+
+    setTimeout(() => {
+      addBotMsg(`Ab batao ${userName}, tum kaisi ho? 😊\nآپ کیسی ہیں؟`, 2400);
+      setOptions(['Bilkul theek! 😊', 'Acha hun 😄', 'Theek nahi hun 😔', 'Bahut achha! ✨']);
+    }, 3200);
+
+  } else if(chatStep === 1) {
+    chatAnswersLog.push({q: 'Kaisi ho?', a: val});
+    chatStep = 2;
+    setOptions(null);
+
+    if(v.includes('theek nahi') || v.includes('good nahi') || v.includes('acha nahi') || v.includes('bura') || v.includes('sad')) {
+      setTimeout(() => {
+        addBotMsg(`Ohhh! 😟 Yeh sunke Sudais ko bahut dukh hoga!\n\nMain abhi Sudais ko inform karta hun ke tum theek nahi ho! 📞\n📢 "Sudais! Muskan theek nahi hai! Jao unka khayal rakho!" 😤\n\nDon't worry ${userName}, Sudais hoga tumhara khayal! 💕`, 600);
+      }, 400);
+    } else {
+      setTimeout(() => {
+        addBotMsg(`Wow! ${userName} is good! 😊✨\n\nNice! Main samajhta hun Sudais tumhara bahut khayal rakhta hai! 💗\n"Sudais bhi theek hai kyunke Muskan theek hai!" 😄`, 600);
+      }, 400);
+    }
+
+    setTimeout(() => {
+      addBotMsg(`Batao ${userName}, tumhare din kaisa guzar raha hai? 🌸\nآپ کا دن کیسا گزر رہا ہے؟`, 2500);
+      setOptions(['Bahut acha! ✨', 'Theek theek 😊', 'Boring tha 😴', 'Maza nahi aaya 😕']);
+    }, 3300);
+
+  } else if(chatStep === 2) {
+    chatAnswersLog.push({q: 'Din kaisa guzra?', a: val});
+    chatStep = 3;
+    setOptions(null);
+
+    if(v.includes('acha') || v.includes('maza') || v.includes('khush') || v.includes('accha') || v.includes('bahut')) {
+      setTimeout(() => {
+        addBotMsg(`Haha! 😄 Jaanta hun kyun acha hai!\n\n💗 "Kyunki Sudais tumhari zindagi mein hai isliye din acha hai!" 💗\nIs Eid par Sudais yaad aa raha hai na? 😊`, 600);
+      }, 400);
+    } else {
+      setTimeout(() => {
+        addBotMsg(`Ohh! 😔 Koi baat nahi ${userName}!\n\n💕 "Sudais tumhara din aur bhi acha kar deta agar saath hota!"\n\nUmeed hai ke Sudais tumhara aur zyada khayal rakhe! 🌹`, 600);
+      }, 400);
+    }
+
+    setTimeout(() => {
+      addBotMsg(`${userName}, ek romantic sawaal! 💕\nSudais ke baare mein kya sochti ho? 🌸\nسدائس کے بارے میں کیا سوچتی ہو؟`, 2500);
+      setOptions(['Bohot pyara hai! 😍', 'World ka best hai! 🌟', 'Mera sab kuch hai! 💗', 'Miss karta hai mujhe 🥺']);
+    }, 3300);
+
+  } else if(chatStep === 3) {
+    chatAnswersLog.push({q: 'Sudais ke baare mein soch?', a: val});
+    chatStep = 4;
+    setOptions(null);
+
+    setTimeout(() => {
+      addBotMsg(`Awwww! 😍💗\n\n"${val}" — Yeh sunke Sudais bohot khush hoga!\n\nSudais ka message: 💌 "Muskan! Tum mere dil ki rani ho! Main tumse bohot pyar karta hun! ❤️"\n\nسدائس کا پیغام: تم میری دنیا ہو، مسکان! 🌹`, 600);
+    }, 400);
+
+    setTimeout(() => {
+      addBotMsg(`🎊 Ab Eid wala sawaal!\nIs Eid ul Adha par kitna gosht chahiye? 🥩\nعید پر کتنا گوشت چاہیے؟`, 2500);
+      setMeatOptions();
+    }, 3300);
+
+  } else if(chatStep === 4) {
+    chatAnswersLog.push({q: 'Kitna gosht chahiye?', a: val});
+    chatStep = 5;
+    setOptions(null);
+
+    setTimeout(() => {
+      addBotMsg(`Haha! 😄 ${val} gosht!\n\n🥩 "Sudais personally ${val} gosht arrange karega tumhare liye Eid par!" 💕\n\nAbhi Sudais ki special website explore karo! 🌸`, 600);
+    }, 400);
+
+    setTimeout(() => {
+      // Save chat answers to state
+      appState.chatAnswers = [...appState.chatAnswers, ...chatAnswersLog];
+      saveState();
+
+      addBotMsg(`✨ Chat khatam! Enjoy karo!\n\nMake sure Sudais ka profile dekhna aur apni Memories add karna! 💗\n\nعید مبارک Muskan! 🌙🌹`, 800);
+
+      setTimeout(() => {
+        showPage('mainapp');
+        initMainApp();
+      }, 3000);
+    }, 3800);
+  }
+}
+
+// ===== MAIN APP =====
+function initMainApp() {
+  loadLovelyTexts();
+  loadUrduQuotes();
+  loadDailyQuotes();
+  initScrollReveal();
+  renderProfilePics();
+}
+
+function renderProfilePics() {
+  ['sudais','muskan'].forEach(name => {
+    const navEl = document.getElementById('nav' + (name.charAt(0).toUpperCase() + name.slice(1)) + 'Avatar');
+    if(!navEl) return;
+    const prof = appState[name];
+    if(prof.pic) {
+      navEl.innerHTML = `<img src="${prof.pic}" alt="${name}">`;
+    } else {
+      navEl.innerHTML = `<span>${prof.emoji}</span>`;
+    }
+  });
+}
+
+const lovelyData = [
+  {text: "Tumhara har smile mujhe zyada khoobsurat lagta hai is duniya ki kisi bhi cheez se! 💗", urdu: true, funny: false},
+  {text: "مسکان! تم بغیر کہے میری دعاؤں کا جواب ہو 🌹", urdu: true, funny: false},
+  {text: "Sudais says: 'Main teri har baat manta hun... mostly! 😄'", urdu: false, funny: true},
+  {text: "تم میری زندگی کی سب سے مہنگی چیز ہو — میرے دل پر قبضہ جو ہے تمہارا! 💕", urdu: true, funny: true},
+  {text: "Every love song makes me think of you, Muskan! 🎵💗", urdu: false, funny: false},
+  {text: "سدائس کا قول: 'مسکان کے بغیر عید نہیں!' 🌙", urdu: true, funny: false},
+  {text: "You are not just my love, you're my home, Muskan! 🏠💗", urdu: false, funny: false},
+  {text: "مسکان! تم اتنی پیاری ہو کہ آئینہ بھی تم دیکھ کر شرما جاتا ہے! 😂💗", urdu: true, funny: true},
+];
+
+function loadLovelyTexts() {
+  const container = document.getElementById('lovelyTexts');
+  container.innerHTML = lovelyData.map(l => 
+    `<div class="lovely-card scroll-reveal ${l.urdu ? 'urdu' : ''} ${l.funny ? 'funny' : ''}">${l.text}</div>`
+  ).join('');
+}
+
+const urduQuotesList = [
+  "محبت وہ دریا ہے جو کبھی خشک نہیں ہوتا 🌊",
+  "تمہاری مسکراہٹ میرے دل کا سکون ہے 🌸",
+  "دل کی گہرائیوں سے: تم میرا سب کچھ ہو 💗",
+  "پیار میں وقت نہیں لگتا، ایک لمحہ کافی ہوتا ہے ✨",
+  "مسکان: میری خوشی، میری دنیا، میری زندگی 🌹",
+];
+
+function loadUrduQuotes() {
+  const container = document.getElementById('urduQuotes');
+  container.innerHTML = `
+    <div style="padding: 20px; background: linear-gradient(135deg, #fff0f5, white); border-radius: 20px; margin: 10px;">
+      <h3 style="text-align:center; color: var(--text-dark); font-family: 'Playfair Display', serif; margin-bottom: 15px;">🌹 اقوال محبت 🌹</h3>
+      ${urduQuotesList.map(q => `
+        <div class="scroll-reveal" style="background: white; border: 1px solid var(--pink-200); border-radius: 14px; padding: 18px; margin-bottom: 12px; text-align: center; font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; font-size: 1.1rem; color: var(--text-dark); line-height: 1.8;">
+          ${q}
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+// Daily quotes — different every day (rotates based on day of year)
+const allDailyQuotes = [
+  {text: "Tum meri zindagi ki sabse khoobsurat kahani ho! 📖💗", urdu: false},
+  {text: "تم میرے دل کی دھڑکن ہو، مسکان! 💓", urdu: true},
+  {text: "Is Eid par sirf ek khwahish hai — tumhare saath rahu! 🌙", urdu: false},
+  {text: "مسکان! تم نہ ہوتیں تو عید بھی سونی لگتی 🌹", urdu: true},
+  {text: "Every moment with you is a blessing, Muskan! ✨", urdu: false},
+  {text: "سدائس کا دل کہتا ہے: مسکان سب سے پیاری ہے! 💕", urdu: true},
+  {text: "You make my heart sing, Muskan! 🎵💗", urdu: false},
+  {text: "آج کی عید تم سے مبارک ہوئی! 🎊", urdu: true},
+  {text: "Sudais says: 'Muskan, tum chocolate se bhi meethi ho!' 🍫😄", urdu: false},
+  {text: "محبت کا سب سے خوبصورت احساس — تمہارا خیال! 🌸", urdu: true},
+  {text: "Har dua mein tera naam hota hai, Muskan! 🤲💗", urdu: false},
+  {text: "تم میری ہر خوشی کی وجہ ہو! ✨", urdu: true},
+  {text: "Pyar mein koi shak nahi, Muskan! Tum hi ho! 💗", urdu: false},
+  {text: "مسکان! تم سے ملنا زندگی کا سب سے اچھا لمحہ تھا 💕", urdu: true},
+];
+
+function loadDailyQuotes() {
+  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+  const start = dayOfYear % allDailyQuotes.length;
+  const todayQuotes = [];
+  for(let i = 0; i < 12; i++) {
+    todayQuotes.push(allDailyQuotes[(start + i) % allDailyQuotes.length]);
+  }
+  const container = document.getElementById('dailyQuotesList');
+  container.innerHTML = todayQuotes.map(q =>
+    `<div class="daily-quote-card scroll-reveal">
+      <p class="quote-text ${q.urdu ? 'urdu' : ''}">${q.text}</p>
+    </div>`
+  ).join('');
+}
+
+// Scroll reveal
+function initScrollReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  
+  setTimeout(() => {
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+  }, 500);
+}
+
+// ===== PROFILE =====
+function openProfile(who) {
+  appState.currentProfile = who;
+  const prof = appState[who];
+  const page = document.getElementById('profilePage');
+  
+  // Set header
+  document.getElementById('profileNameEl').textContent = prof.name;
+  document.getElementById('profileBirthdayEl').innerHTML = `🎂 Birthday: ${prof.birthday}`;
+  
+  // Birthday countdown
+  const today = new Date();
+  const bday = new Date(today.getFullYear(), prof.birthdayMonth - 1, prof.birthdayDay);
+  if(bday < today) bday.setFullYear(today.getFullYear() + 1);
+  const daysLeft = Math.ceil((bday - today) / 86400000);
+  document.getElementById('birthdayCountdown').textContent = 
+    daysLeft === 0 ? '🎉 TODAY IS THE BIRTHDAY! 🎉' : `🎂 ${daysLeft} days to birthday! باقی ہیں`;
+
+  // Profile pic
+  const picContainer = document.getElementById('profilePicContainer');
+  const picImg = document.getElementById('profilePicImg');
+  const picEmoji = document.getElementById('profilePicEmoji');
+  if(prof.pic) {
+    picImg.src = prof.pic;
+    picImg.style.display = 'block';
+    picEmoji.style.display = 'none';
+  } else {
+    picEmoji.textContent = prof.emoji;
+    picEmoji.style.display = 'block';
+    picImg.style.display = 'none';
+  }
+
+  // Set tabs
+  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.ptab')[0].classList.add('active');
+  appState.currentTab = 'photos';
+  
+  page.classList.add('open');
+  renderProfileTab();
+}
+
+function closeProfile() {
+  document.getElementById('profilePage').classList.remove('open');
+}
+
+function changeProfilePic() {
+  document.getElementById('profilePicInput').click();
+}
+
+function handleProfilePicChange(e) {
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    appState[appState.currentProfile].pic = ev.target.result;
+    saveState();
+    openProfile(appState.currentProfile);
+    renderProfilePics();
+  };
+  reader.readAsDataURL(file);
+}
+
+function switchTab(tab) {
+  appState.currentTab = tab;
+  document.querySelectorAll('.ptab').forEach((t, i) => {
+    t.classList.toggle('active', ['photos','videos','texts','lovely'].indexOf(tab) === i);
+  });
+  renderProfileTab();
+}
+
+function renderProfileTab() {
+  const prof = appState[appState.currentProfile];
+  const container = document.getElementById('profileTabContent');
+  const tab = appState.currentTab;
+
+  if(tab === 'photos') {
+    const addBtnHtml = `<button class="add-btn" onclick="addMedia('${appState.currentProfile}','photo')">📷 Add Photo</button>`;
+    const grid = prof.photos.length ? prof.photos.map((p,i) =>
+      `<div class="media-item" onclick="viewMedia('${p.data}','image')">
+        <img src="${p.data}" alt="photo">
+      </div>`
+    ).join('') : '<p style="color:var(--text-med);padding:20px;grid-column:1/-1;">No photos yet! 📷</p>';
+    container.innerHTML = addBtnHtml + `<div class="media-grid">${grid}</div>`;
+
+  } else if(tab === 'videos') {
+    const addBtnHtml = `<button class="add-btn" onclick="addMedia('${appState.currentProfile}','video')">🎥 Add Video</button>`;
+    const grid = prof.videos.length ? prof.videos.map((v,i) =>
+      `<div class="media-item" onclick="viewMedia('${v.data}','video')">
+        <video src="${v.data}" muted></video>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2rem;color:white;text-shadow:0 2px 8px rgba(0,0,0,0.5);">▶</div>
+      </div>`
+    ).join('') : '<p style="color:var(--text-med);padding:20px;grid-column:1/-1;">No videos yet! 🎥</p>';
+    container.innerHTML = addBtnHtml + `<div class="media-grid">${grid}</div>`;
+
+  } else if(tab === 'texts') {
+    const addBtnHtml = `<button class="add-btn" onclick="addMedia('${appState.currentProfile}','text')">💬 Add Text</button>`;
+    const texts = prof.texts.length ? prof.texts.map((t,i) =>
+      `<div class="text-card">${t.text}<div class="card-date">${t.date}</div></div>`
+    ).join('') : '<p style="color:var(--text-med);padding:20px;">No texts yet! 💬</p>';
+    container.innerHTML = addBtnHtml + texts;
+
+  } else if(tab === 'lovely') {
+    container.innerHTML = lovelyData.map(l =>
+      `<div class="lovely-card ${l.urdu ? 'urdu' : ''} ${l.funny ? 'funny' : ''}">${l.text}</div>`
+    ).join('');
+  }
+}
+
+// ===== MEMORIES =====
+function openMemories() {
+  document.getElementById('memoriesPage').classList.add('open');
+  renderMemories();
+}
+
+function closeMemories() {
+  document.getElementById('memoriesPage').classList.remove('open');
+}
+
+function renderMemories() {
+  const m = appState.memories;
+  const grid = document.getElementById('memoriesGrid');
+  const texts = document.getElementById('memoriesTexts');
+  const noMem = document.getElementById('noMemories');
+  const hasAny = m.photos.length || m.videos.length || m.texts.length;
+  noMem.style.display = hasAny ? 'none' : 'block';
+
+  grid.innerHTML = [
+    ...m.photos.map(p => `<div class="media-item" onclick="viewMedia('${p.data}','image')"><img src="${p.data}"></div>`),
+    ...m.videos.map(v => `<div class="media-item" onclick="viewMedia('${v.data}','video')"><video src="${v.data}" muted></video><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2rem;color:white;">▶</div></div>`)
+  ].join('');
+
+  texts.innerHTML = m.texts.map((t,i) =>
+    `<div class="text-card">${t.text}<div class="card-date">${t.date}</div></div>`
+  ).join('');
+}
+
+function addMemory(type) {
+  appState.currentAddTarget = 'memory';
+  appState.currentAddType = type;
+  if(type === 'text') {
+    document.getElementById('addTextTitle').textContent = '📸 Add Memory Text';
+    openModal('addTextModal');
+  } else {
+    document.getElementById('addMediaTitle').textContent = type === 'photo' ? '📷 Add Memory Photo' : '🎥 Add Memory Video';
+    document.getElementById('mediaFileInput').accept = type === 'photo' ? 'image/*' : 'video/*';
+    openModal('addMediaModal');
+  }
+}
+
+// ===== LOVE PAGE =====
+function openLovePage() {
+  document.getElementById('lovePage').classList.add('open');
+  renderLovePage();
+}
+
+function closeLovePage() {
+  document.getElementById('lovePage').classList.remove('open');
+}
+
+function renderLovePage() {
+  const loveQuotes = [
+    {text: "Sudais 💗 Muskan — Forever and Always!", urdu: false},
+    {text: "تم میری پہلی اور آخری محبت ہو، مسکان! 🌹", urdu: true},
+    {text: "In this world of billions, I choose you, Muskan! 💗", urdu: false},
+    {text: "میری دنیا، میری خوشی، میری مسکان! ✨", urdu: true},
+    {text: "Every heartbeat says your name, Muskan! 💓", urdu: false},
+    {text: "تمہارے بغیر زندگی ادھوری ہے، میری جان! 💕", urdu: true},
+  ];
+
+  document.getElementById('lovePageContent').innerHTML = loveQuotes.map(q =>
+    `<div class="love-quote-card">
+      <p class="${q.urdu ? 'urdu-q' : ''}">${q.text}</p>
+    </div>`
+  ).join('');
+
+  renderLoveMedia();
+}
+
+function renderLoveMedia() {
+  const lv = appState.love;
+  document.getElementById('loveMediaGrid').innerHTML = [
+    ...lv.photos.map(p => `<div class="media-item" onclick="viewMedia('${p.data}','image')"><img src="${p.data}"></div>`),
+    ...lv.videos.map(v => `<div class="media-item" onclick="viewMedia('${v.data}','video')"><video src="${v.data}" muted></video><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2rem;color:white;">▶</div></div>`)
+  ].join('');
+  document.getElementById('loveTexts').innerHTML = lv.texts.map(t =>
+    `<div class="text-card">${t.text}<div class="card-date">${t.date}</div></div>`
+  ).join('');
+}
+
+// ===== MEDIA ADD =====
+function addMedia(target, type) {
+  appState.currentAddTarget = target;
+  appState.currentAddType = type;
+  if(type === 'text') {
+    document.getElementById('addTextTitle').textContent = type === 'text' ? '💬 Add Text' : '';
+    openModal('addTextModal');
+  } else {
+    document.getElementById('addMediaTitle').textContent = type === 'photo' ? '📷 Add Photo' : '🎥 Add Video';
+    document.getElementById('mediaFileInput').accept = type === 'photo' ? 'image/*' : 'video/*';
+    openModal('addMediaModal');
+  }
+}
+
+function saveMedia() {
+  const file = document.getElementById('mediaFileInput').files[0];
+  if(!file) { alert('Please select a file!'); return; }
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    const data = { data: ev.target.result, date: new Date().toLocaleDateString() };
+    const target = appState.currentAddTarget;
+    const type = appState.currentAddType;
+    
+    if(target === 'memory') {
+      appState.memories[type === 'photo' ? 'photos' : 'videos'].push(data);
+      saveState(); closeModal('addMediaModal');
+      renderMemories();
+    } else if(target === 'love') {
+      appState.love[type === 'photo' ? 'photos' : 'videos'].push(data);
+      saveState(); closeModal('addMediaModal');
+      renderLoveMedia();
+    } else {
+      appState[target][type === 'photo' ? 'photos' : 'videos'].push(data);
+      saveState(); closeModal('addMediaModal');
+      renderProfileTab();
+    }
+    document.getElementById('mediaFileInput').value = '';
+  };
+  reader.readAsDataURL(file);
+}
+
+function saveText() {
+  const text = document.getElementById('textInput').value.trim();
+  if(!text) { alert('Please write something!'); return; }
+  const data = { text, date: new Date().toLocaleDateString() };
+  const target = appState.currentAddTarget;
+  
+  if(target === 'memory') {
+    appState.memories.texts.push(data);
+    saveState(); closeModal('addTextModal');
+    renderMemories();
+  } else if(target === 'love') {
+    appState.love.texts.push(data);
+    saveState(); closeModal('addTextModal');
+    renderLoveMedia();
+  } else {
+    appState[target].texts.push(data);
+    saveState(); closeModal('addTextModal');
+    renderProfileTab();
+  }
+  document.getElementById('textInput').value = '';
+}
+
+// ===== FAV THINGS =====
+function openFavThings() {
+  renderFavThings();
+  openModal('favThingsModal');
+}
+
+function renderFavThings() {
+  const list = document.getElementById('favThingsList');
+  list.innerHTML = appState.favThings.length
+    ? appState.favThings.map((t,i) =>
+        `<div style="background:var(--pink-50);border:1px solid var(--pink-200);border-radius:10px;padding:10px;margin-bottom:8px;font-size:0.85rem;color:var(--text-dark);">🌸 ${t}</div>`
+      ).join('')
+    : '<p style="color:var(--text-med);font-size:0.85rem;">No favourites yet! Add Muskan\'s fav things 🌸</p>';
+}
+
+function saveFavThing() {
+  const val = document.getElementById('favThingInput').value.trim();
+  if(!val) return;
+  appState.favThings.push(val);
+  saveState();
+  document.getElementById('favThingInput').value = '';
+  renderFavThings();
+}
+
+// ===== MEDIA VIEWER =====
+function viewMedia(src, type) {
+  const viewer = document.getElementById('mediaViewer');
+  const content = document.getElementById('viewerContent');
+  content.innerHTML = type === 'image'
+    ? `<img src="${src}" alt="media">`
+    : `<video src="${src}" controls autoplay style="max-width:95%;max-height:90vh;border-radius:12px;"></video>`;
+  viewer.classList.add('open');
+}
+
+function closeViewer() {
+  document.getElementById('mediaViewer').classList.remove('open');
+  document.getElementById('viewerContent').innerHTML = '';
+}
+
+// ===== ADMIN =====
+let adminTimerHandle = null;
+function startAdminTimer() {
+  adminTimerHandle = setTimeout(() => {
+    document.getElementById('adminPanel').classList.add('open');
+  }, 5000);
+}
+function clearAdminTimer() {
+  if(adminTimerHandle) clearTimeout(adminTimerHandle);
+}
+
+function adminLogin() {
+  const pass = document.getElementById('adminPassInput').value;
+  if(pass === 'muskan01') {
+    document.getElementById('adminLogin').style.display = 'none';
+    document.getElementById('adminContent').style.display = 'block';
+    appState.adminLoggedIn = true;
+    renderAdminPanel();
+  } else {
+    document.getElementById('adminError').textContent = '❌ Wrong password! غلط پاسورڈ';
+    setTimeout(() => { document.getElementById('adminError').textContent = ''; }, 2000);
+  }
+}
+
+function adminKeyPress(e) {
+  if(e.key === 'Enter') adminLogin();
+}
+
+function closeAdmin() {
+  document.getElementById('adminPanel').classList.remove('open');
+  document.getElementById('adminLogin').style.display = 'block';
+  document.getElementById('adminContent').style.display = 'none';
+  document.getElementById('adminPassInput').value = '';
+  appState.adminLoggedIn = false;
+}
+
+function renderAdminPanel() {
+  // Chat answers
+  const chatEl = document.getElementById('adminChatAnswers');
+  chatEl.innerHTML = appState.chatAnswers.length
+    ? appState.chatAnswers.map((c,i) =>
+        `<div class="admin-qa-item">
+          <div class="q">Q: ${c.q}</div>
+          <div class="a">A: ${c.a}</div>
+        </div>`
+      ).join('')
+    : '<p style="color:rgba(255,255,255,0.4);">No chat answers yet.</p>';
+
+  // Media sections
+  renderAdminMedia('adminSudaisMedia', 'sudais');
+  renderAdminMedia('adminMuskanMedia', 'muskan');
+  renderAdminMedia('adminLoveMedia', 'love');
+  renderAdminMemories();
+}
+
+function renderAdminMedia(elId, target) {
+  const el = document.getElementById(elId);
+  const src = appState[target];
+  const items = [
+    ...src.photos.map((p,i) => ({type:'photo', idx:i, data:p})),
+    ...src.videos.map((v,i) => ({type:'video', idx:i, data:v})),
+    ...src.texts.map((t,i) => ({type:'text', idx:i, data:t})),
+  ];
+  el.innerHTML = items.length
+    ? items.map(item =>
+        `<div class="admin-item">
+          <div class="admin-item-content">
+            ${item.type === 'text' ? `💬 ${item.data.text.substring(0,60)}...` : `${item.type === 'photo' ? '📷' : '🎥'} ${item.type} — ${item.data.date}`}
+          </div>
+          <button class="admin-del-btn" onclick="adminDelete('${target}','${item.type}',${item.idx})">🗑 Delete</button>
+        </div>`
+      ).join('')
+    : '<p style="color:rgba(255,255,255,0.4);">No items.</p>';
+}
+
+function renderAdminMemories() {
+  const el = document.getElementById('adminMemories');
+  const m = appState.memories;
+  const items = [
+    ...m.photos.map((p,i) => ({type:'photo', idx:i, data:p})),
+    ...m.videos.map((v,i) => ({type:'video', idx:i, data:v})),
+    ...m.texts.map((t,i) => ({type:'text', idx:i, data:t})),
+  ];
+  el.innerHTML = items.length
+    ? items.map(item =>
+        `<div class="admin-item">
+          <div class="admin-item-content">
+            ${item.type === 'text' ? `💬 ${item.data.text.substring(0,60)}` : `${item.type === 'photo' ? '📷' : '🎥'} ${item.type} — ${item.data.date}`}
+          </div>
+          <button class="admin-del-btn" onclick="adminDeleteMemory('${item.type}',${item.idx})">🗑 Delete</button>
+        </div>`
+      ).join('')
+    : '<p style="color:rgba(255,255,255,0.4);">No memories.</p>';
+}
+
+function adminDelete(target, type, idx) {
+  if(!confirm('Delete this item? یہ حذف کریں؟')) return;
+  const key = type === 'photo' ? 'photos' : type === 'video' ? 'videos' : 'texts';
+  appState[target][key].splice(idx, 1);
+  saveState();
+  renderAdminMedia('admin' + target.charAt(0).toUpperCase() + target.slice(1) + 'Media', target);
+}
+
+function adminDeleteMemory(type, idx) {
+  if(!confirm('Delete this memory? یہ یاد حذف کریں؟')) return;
+  const key = type === 'photo' ? 'photos' : type === 'video' ? 'videos' : 'texts';
+  appState.memories[key].splice(idx, 1);
+  saveState();
+  renderAdminMemories();
+}
+
+// ===== MODALS =====
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// Close modals on backdrop click
+document.querySelectorAll('.modal').forEach(m => {
+  m.addEventListener('click', (e) => {
+    if(e.target === m) m.classList.remove('open');
+  });
+});
+
+// Close media viewer
+document.getElementById('mediaViewer').addEventListener('click', (e) => {
+  if(e.target === document.getElementById('mediaViewer')) closeViewer();
+});
+
+function scrollToTop() { window.scrollTo({top:0, behavior:'smooth'}); }
+</script>
+</body>
+</html>
